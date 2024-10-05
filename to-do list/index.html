@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>To-Do List</h1>
+        <input type="text" id="task-input" placeholder="Add new task...">
+        <button id="add-task">Add Task</button>
+
+        <ul id="task-list"></ul>
+    </div>
+
+    <script>
+        // Get elements
+        const taskInput = document.getElementById('task-input');
+        const addTaskButton = document.getElementById('add-task');
+        const taskList = document.getElementById('task-list');
+
+        // Add task event
+        addTaskButton.onclick = function() {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                // Create a new list item
+                const listItem = document.createElement('li');
+                listItem.textContent = taskText;
+
+                // Create delete button
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.className = 'delete-btn';
+
+                // Delete task event
+                deleteButton.onclick = function() {
+                    taskList.removeChild(listItem);
+                };
+
+                // Add button to list item and list item to the list
+                listItem.appendChild(deleteButton);
+                taskList.appendChild(listItem);
+
+                // Clear input
+                taskInput.value = '';
+            } else {
+                alert('Please enter a task.');
+            }
+        };
+
+        // Add task on Enter key press
+        taskInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                addTaskButton.click();
+            }
+        });
+    </script>
+
+</body>
+</html>

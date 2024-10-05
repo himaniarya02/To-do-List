@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #bae7a8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%; 
+    padding: 20px;
+    background-color: white; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+h1 {
+    margin-bottom: 20px; /* Space below the title */
+}
+#task-input {
+    width: 80%; /* Responsive width */
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid #ccc; /* Border for input */
+}
+#add-task {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #ce847a;
+    color: rgb(243, 210, 210);
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px; /* Space between input and button */
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px; /* Space above the list */
+}
+li {
+    background: rgb(158, 175, 209);
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(150, 105, 105, 0.2);
+}
+.delete-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    #task-input {
+        width: 70%; /* Adjust width for smaller screens */
+    }
+    #add-task {
+        width: 25%; /* Adjust button size */
+    }
+}
